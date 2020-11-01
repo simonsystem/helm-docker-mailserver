@@ -40,7 +40,7 @@ spec:
   {{- if eq .Values.service.type "NodePort" }}    
       nodePort: {{ default "30025" .Values.service.nodePort.smtp }}
   {{ end }}  
-  {{- if eq .Values.pod.dockermailserver.enable_pop3 1 }}
+  {{- if .Values.pod.dockermailserver.enable_pop3 | toString | eq "1" }}
     - protocol: "TCP"
       name: "tcp-pop3"
       port: 110
@@ -73,7 +73,7 @@ spec:
   {{- if eq .Values.service.type "NodePort" }}    
       nodePort: {{ default "30993" .Values.service.nodePort.imaps }}
   {{ end }}   
-  {{- if eq .Values.pod.dockermailserver.enable_pop3 1 }}
+  {{- if .Values.pod.dockermailserver.enable_pop3 | toString | eq "1" }}
     - protocol: "TCP"
       name: "tcp-pop3s"
       port: 995
@@ -81,7 +81,7 @@ spec:
       nodePort: {{ default "30995" .Values.service.nodePort.pop3s }}
   {{ end }}    
   {{ end }}
-  {{- if eq .Values.pod.dockermailserver.enable_managesieve 1 }}
+  {{- if .Values.pod.dockermailserver.enable_managesieve | toString | eq "1" }}
     - protocol: "TCP"
       name: "tcp-managesieve"
       port: 4190  
