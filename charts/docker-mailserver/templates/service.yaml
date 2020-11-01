@@ -12,7 +12,7 @@ metadata:
     prometheus.io/port: {{ .Values.monitoring.service.port | quote }}
     ##  
   {{- if .Values.service.annotations }}
-  {{ toYaml .Values.service.annotations | indent 2 }}  
+{{ toYaml .Values.service.annotations | indent 4 }}  
   {{ end }}    
   labels:
     app: {{ template "dockermailserver.fullname" . }}
