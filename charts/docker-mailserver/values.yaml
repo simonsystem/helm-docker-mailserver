@@ -146,8 +146,8 @@ pod:
     # Set this to "manual" or "letsencrypt". Leaving it set empty will disable SSL support
     ssl_type:
 
-    # ssl_cert_path: "/tmp/ssl/tls.crt"
-    # ssl_key_path: "/tmp/ssl/tls.key"
+    ssl_cert_path: "/tmp/ssl/tls.crt"
+    ssl_key_path: "/tmp/ssl/tls.key"
     tls_level:
     spoof_protection:
     enable_srs: 0
