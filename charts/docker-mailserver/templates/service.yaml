@@ -51,10 +51,10 @@ spec:
     - protocol: "TCP"
       name: "tcp-imap"
       port: 143
-  {{ end }}
   {{- if eq .Values.service.type "NodePort" }}    
       nodePort: {{ default "30143" .Values.service.nodePort.imap }}
   {{ end }}       
+  {{ end }}
     - protocol: "TCP"
       name: "tcp-smtps"
       port: 465
