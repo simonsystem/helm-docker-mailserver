@@ -100,6 +100,12 @@ pod:
   # pod.dockermailserver section refers to the configuration of the docker-mailserver pod itself. Note that teh many environment variables which define the behaviour of docker-mailserver are configured here
   dockermailserver:
 
+    ## Add list of extra config file.
+    extraConfigs: false
+
+    ## Add list of extra volume mounts, e.g. files.
+    extraVolumeMounts: false
+
     ## Host networking requested for this pod. Use the host’s network namespace. If this option is set, the ports that
     ## will be used must be specified.
     ## Ref: https://kubernetes.io/docs/api-reference/v1/definitions/#_v1_podspec

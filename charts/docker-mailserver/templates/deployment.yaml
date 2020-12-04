@@ -137,6 +137,9 @@ spec:
               readOnly: true              
               {{- end }}     
               {{- end }}                                   
+            {{- if .Values.pod.dockermailserver.extraVolumeMounts }}
+{{ toYaml .Values.pod.dockermailserver.extraVolumeMounts | indent 12 }}
+            {{- end }}
           livenessProbe:
             exec:
                command:
