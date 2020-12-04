@@ -114,4 +114,8 @@ data:
     {{ . }} && \
     {{- end }}
     echo "All healthy"
+
+  {{- if .Values.pod.dockermailserver.extraConfig }}
+{{ toYaml .Values.pod.dockermailserver.extraConfig | indent 2 }}
+  {{- end }}
 {{- end -}}
